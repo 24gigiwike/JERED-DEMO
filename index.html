@@ -103,7 +103,28 @@
 </ul>
 </div>
 <div class="header-right">
-<a class="menu-btn" href="mailto:jeredmeedia@gmail.com?subject=Project%20Request&body=Hello,%20I%20would%20like%20to%20make%20a%20request.">Request a Quote</a>
+<a class="menu-btn" href="mailto:jeredmeedia@gmail.com?subject=Project%20Request&body=Hello,%20I%20would%20like%20to%20make%20a%20request." id="quoteBtn" class="quote-btn">Request a Quote</a>
+
+    <!-- Modal -->
+<div id="quoteModal" class="modal hidden">
+  <div class="modal-content">
+
+    <span class="close-btn" onclick="closeModal()">×</span>
+
+    <!-- Progress -->
+    <div id="progressContainer" class="hidden">
+      <p id="progressText"></p>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Dynamic Content -->
+    <div id="modalBody"></div>
+
+  </div>
+
+    
 
 <div class="mobile-menu-icon">
 <div class="burger-menu">
