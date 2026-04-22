@@ -69,6 +69,13 @@ button {
   background: #2563eb;
   color: #fff;
   cursor: pointer;
+  margin-right: 10px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #94a3b8;
 }
 
 .hidden { display: none; }
@@ -97,6 +104,7 @@ button {
   <div id="success" class="success hidden">
     <h2>✔ Request Submitted</h2>
     <p>We Will Contact You Shortly</p>
+    <button onclick="goBackHome()">Back To Services</button>
   </div>
 </div>
 
@@ -109,12 +117,19 @@ function selectFlow(type) {
   loadForm();
 }
 
+function goBackHome() {
+  document.getElementById("success").classList.add("hidden");
+  document.getElementById("step1").classList.remove("hidden");
+  document.getElementById("formSection").classList.add("hidden");
+}
+
 function loadForm() {
   const form = document.getElementById("formSection");
   form.classList.remove("hidden");
 
   if (flow === "developers" || flow === "fitouts") {
     form.innerHTML = `
+      <button class="back-btn" onclick="goBackHome()">← Back</button>
       <h3>Project Details</h3>
       <input placeholder="Full Name">
       <input placeholder="Phone Number">
@@ -128,6 +143,7 @@ function loadForm() {
 
   if (flow === "training") {
     form.innerHTML = `
+      <button class="back-btn" onclick="goBackHome()">← Back</button>
       <h3>Become A Professional Technician</h3>
       <input placeholder="Full Name">
       <input placeholder="Phone Number">
