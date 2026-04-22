@@ -9,6 +9,9 @@ let options = {
 }
 purify(content, css, options)
 
+img .builtby{
+	width:25%
+}
 
 .container .builtby{
 	width:50px;
